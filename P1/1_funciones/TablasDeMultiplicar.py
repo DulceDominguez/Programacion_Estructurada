@@ -1,0 +1,13 @@
+#Calcular e imprimir la tabla de multiplicar del 2.Restrinscciones:1-No usar estructuras de control 2-No usar fubnciones
+print("Tablas de multiplicar sin funciones y estruncuras de control")
+numero=int(input("Ingrese el numero del que desea saber la tabla de multiplicar: "))
+print(f"1x{numero}={numero*1}")
+print(f"2x{numero}={numero*2}")
+print(f"3x{numero}={numero*3}")
+print(f"4x{numero}={numero*4}")
+print(f"5x{numero}={numero*5}")
+print(f"6x{numero}={numero*6}")
+print(f"7x{numero}={numero*7}")
+print(f"8x{numero}={numero*8}")
+print(f"9x{numero}={numero*9}")
+print(f"10x{numero}={numero*10}")
