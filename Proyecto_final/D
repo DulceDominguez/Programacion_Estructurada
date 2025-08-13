@@ -1,0 +1,26 @@
+import Funciones
+from Empleados import empleado
+from Productos import inventario
+from Ventas import venta
+import getpass
+from tabulate import tabulate
+from datetime import datetime
+import os
+
+print("\n\t\t\t\t\t ..:: 📄 Mostrar inventario ::..")
+Lista_inventario=inventario.MostrarProductos()
+if len(Lista_inventario)>0:
+    importar=input("\n\tDesea exportar la tabla a PDF? si/no?: ").strip().upper()
+    while importar!="SI" and importar!="NO":
+        importar=input("\tDesea exportar la tabla a PDF? Debe contestar si/no: ").strip().upper()
+    if importar=="SI":
+        from Funciones import PDF
+        pdf = PDF()
+        pdf.add_page()
+        pdf.tabla_inventario(Lista_inventario)
+        pdf.output("inventario.pdf")
+        os.startfile("inventario.pdf")
+    elif importar=="NO":
+        headers = ["Código", "ID Empleado", "Nombre", "Categoría", "Precio", "Unidades", "Cantidad", "Caducidad"]
+        data =Lista_inventario
+        print(tabulate(data, headers=headers, tablefmt="grid"))
